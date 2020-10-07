@@ -1,7 +1,7 @@
 # Laravel Nova field to set background for resource rows
 Set background color to resource row and auto choose white or black text color.  
 
-##Usage
+## Usage
 Add to your resource file: 
 ```php
 use Upline\RowBackground\RowBackground;
