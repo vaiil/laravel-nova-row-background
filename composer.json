@@ -1,0 +1,32 @@
+{
+    "name": "upline/row-background",
+    "description": "Field to set row background.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "background color",
+        "field",
+        "row"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Upline\\RowBackground\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Upline\\RowBackground\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
