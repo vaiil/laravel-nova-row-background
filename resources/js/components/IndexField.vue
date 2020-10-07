@@ -55,7 +55,9 @@ export default {
     updateStyle () {
       const row = this.$el.closest('tr')
       if (row) {
-        row.classList.add('colored-row')
+        if (this.backgroundColor || this.textColor) {
+          row.classList.add('colored-row')
+        }
         if (this.backgroundColor) {
           row.style.backgroundColor = this.backgroundColor
         }
