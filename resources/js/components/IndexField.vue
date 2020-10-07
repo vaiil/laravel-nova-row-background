@@ -22,7 +22,7 @@ export default {
   props: ['resourceName', 'field'],
   data () {
     const value = this.field.value
-    const isValueObject = typeof value === 'object'
+    const isValueObject = value && typeof value === 'object'
     const backgroundColor = isValueObject ? value.backgroundColor : value
     const textColor = isValueObject && value.textColor ? value.textColor : (backgroundColor && makeTextColour(backgroundColor))
     return {
