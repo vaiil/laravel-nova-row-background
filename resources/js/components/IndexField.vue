@@ -24,7 +24,7 @@ export default {
     const value = this.field.value
     const isValueObject = typeof value === 'object'
     const backgroundColor = isValueObject ? value.backgroundColor : value
-    const textColor = isValueObject && value.textColor ? value.textColor : makeTextColour(backgroundColor)
+    const textColor = isValueObject && value.textColor ? value.textColor : (backgroundColor && makeTextColour(backgroundColor))
     return {
       backgroundColor,
       textColor
@@ -54,10 +54,14 @@ export default {
     },
     updateStyle () {
       const row = this.$el.closest('tr')
-      if (row && this.backgroundColor) {
+      if (row) {
         row.classList.add('colored-row')
-        row.style.backgroundColor = this.backgroundColor
-        row.style.color = this.textColor
+        if (this.backgroundColor) {
+          row.style.backgroundColor = this.backgroundColor
+        }
+        if (this.textColor) {
+          row.style.color = this.textColor
+        }
       }
     }
   },
