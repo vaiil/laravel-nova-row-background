@@ -17,9 +17,9 @@ class RowBackgroundData implements JsonSerializable
      */
     private $textColor;
 
-    public function __construct(string $backgroundColor, string $textColor = null)
+    public function __construct(string $backgroundColor = null, string $textColor = null)
     {
-        if (!preg_match('/^#[A-Fa-f0-9]{6}$/', $backgroundColor)) {
+        if ($backgroundColor && !preg_match('/^#[A-Fa-f0-9]{6}$/', $backgroundColor)) {
             throw new InvalidArgumentException('Wrong background color format, available format: #FFFFFF');
         }
 
