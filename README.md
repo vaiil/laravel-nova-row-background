@@ -10,6 +10,12 @@ and field to fields section
 ```php
 RowBackground::make('Background color')->onlyOnIndex();
 ```
+or (to set text color)
+```php
+ RowBackground::make('Background color', function ($model) {
+    return new RowBackgroundData($model->background_color, $model->text_color);
+})->onlyOnIndex();
+```
 
 **Note:**  
 This package works pretty tricky:  
