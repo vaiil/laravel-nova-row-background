@@ -73,11 +73,12 @@ export default {
 }
 </script>
 <style>
-.colored-row:not(:hover) * {
+.colored-row *, .colored-row td {
   color: inherit;
 }
 
-.colored-row:not(:hover) td {
-  color: inherit;
+/* make background hover darken */
+.table .colored-row:hover td {
+  background-color: #0002;
 }
 </style>
